@@ -1,9 +1,11 @@
 #include <stdlib.h>
-
-typedef struct s_list{ 
-void *data;
-struct s_list *next;
-}t_list;
+#include <unistd.h>
+#include <stdbool.h>
+typedef struct s_list
+{
+    void *data;
+    struct s_list *next;
+} t_list;
 
 int mx_strcmp(const char *s1, const char *s2);
 
@@ -66,3 +68,11 @@ char *mx_unconstchar(const char *s);
 void *mx_memchr(const void *s, int c, size_t n);
 
 int mx_get_substr_index(const char *str, const char *sub);
+
+bool mx_isspace(int c);
+
+char *mx_strtrim(const char *str);
+
+t_list *mx_create_node(void *data);
+
+void mx_push_front(t_list **list, void *data);
