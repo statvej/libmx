@@ -76,3 +76,5 @@ char *mx_strtrim(const char *str);
 t_list *mx_create_node(void *data);
 
 void mx_push_front(t_list **list, void *data);
+
+char *mx_del_extra_spaces(const char *str);
