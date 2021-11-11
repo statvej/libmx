@@ -5,7 +5,7 @@ char *mx_unconstchar(const char *s)
         return NULL;
     int i;
     char *res = NULL;
-    res = (char *)malloc(strlen(s) + 1);
+    res = (char *)malloc(mx_strlen(s) + 1);
     if (!res)
     {
         exit(EXIT_FAILURE);

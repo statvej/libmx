@@ -8,6 +8,9 @@ char *mx_strtrim(const char *str)
     int count = 0;
     int ind_last = mx_strlen(str) - 1;
     int ind_first = 0;
+    if(mx_isspace(str[ind_first]) == false||mx_isspace(str[ind_last]) == false){
+        return (char*)str;
+    }
     while (mx_isspace(str[ind_first]) == true)
     {
         ind_first++;
