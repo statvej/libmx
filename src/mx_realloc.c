@@ -1,5 +1,5 @@
 #include "../inc/libmx.h"
-#include <malloc.h>
+
 void *mx_realloc(void *ptr, size_t size){
     if(size == 0){
         free(ptr);
@@ -8,11 +8,11 @@ void *mx_realloc(void *ptr, size_t size){
     else if(!ptr){
         return malloc(size);
     }
-    else if(size <= malloc_usable_size(ptr)){
+    else if(size <= sizeof(ptr)){
         return ptr;
     }
     void *new_ptr = malloc(size);
-    mx_memcpy(new_ptr, ptr, malloc_usable_size(ptr));
+    mx_memcpy(new_ptr, ptr, sizeof(ptr));
     free(ptr);
     return new_ptr;
     
